@@ -1,8 +1,19 @@
+'use client'
+
 import Image from 'next/image'
+import { useState } from 'react';
+import Menu from '../Menu/index'
 
 const NavBar = () => {
 
+    const [isOpen, setIsOpen] = useState(false)
+
+    const handleClick = () => {
+        setIsOpen(!isOpen)
+    }
+
     return (
+        <>
         <nav className='container flex justify-between p-4 md:p-8 text-white'>
             <ul className='text-3xl font-extrabold'>
                 <li>
@@ -11,16 +22,16 @@ const NavBar = () => {
             </ul>
             <ul className='hidden lg:flex flex-row justify-between gap-8 text-xl'>
                 <li>
-                    <a href=".">Sobre mim</a>
+                    <a href=".">About</a>
                 </li>
                 <li>
-                    <a href=".">Projetos</a>
+                    <a href=".">Projects</a>
                 </li>
                 <li>
-                    <a href=".">Contato</a>
+                    <a href=".">Contact</a>
                 </li>
             </ul>
-            <button className='lg:hidden'>
+            <button className='lg:hidden' onClick={handleClick}>
                 <Image 
                 src='/icons/menus (1).png' 
                 alt='Menu Icon'
@@ -28,7 +39,12 @@ const NavBar = () => {
                 height={44}
                 />
             </button>
+
+            
         </nav>
+        {isOpen && <Menu handleClick={handleClick} />}
+        </>
+        
     )
 };
 

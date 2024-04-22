@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <NavBar/>
       <main className="container flex flex-col-reverse lg:flex-row items-center justify-between  lg:mt-16 text-center lg:text-left">
-        <div>
+        <div className=" m-4 lg:m-0">
           <h1 className="text-4xl lg:text-6xl text-white font-bold">Hello i'm Felipe Teixeira</h1>
           <span className="text-white text-xl lg:text-3xl mt-8">
             Full-stack Developer, Instructor and Data Science student
@@ -15,7 +15,7 @@ export default function Home() {
             <div className="bg-blue-600 rounded-full p-3 hover:bg-white hover:text-black">
               <a href="." className="text-xl font-bold p-6 ">Download cv</a>
             </div>
-            <div className="border-2 border-blue-600  rounded-full p-3 hover:bg-blue-600 hover:border-0 hover:p-4">
+            <div className="border-2 border-blue-600 rounded-full p-3 hover:bg-blue-600 hover:border-0 hover:p-4">
               <a href="" className="text-xl font-bold p-6 ">Contact-me</a>
             </div>
           </div>
