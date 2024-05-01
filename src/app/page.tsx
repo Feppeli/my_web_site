@@ -37,7 +37,7 @@ export default function Home() {
         <div>
         <h1 className="text-white text-4xl font-bold">About</h1>
         </div>
-        <div className="flex flex-col items-center mt-16">
+        <div className="flex flex-col items-center mt-4 lg:mt-16">
           <div className="p-4 flex flex-col lg:flex-row lg:justify-center items-center">
             <div>
             <Image 
@@ -75,7 +75,7 @@ export default function Home() {
         <div>
           <h1 className="text-white text-4xl font-bold">Projects</h1>
         </div>
-        <div className="flex flex-col items-center mt-12 p-10 lg:flex-row lg:flex-wrap justify-center">
+        <div className="flex flex-col items-center mt-2 pl-4 pr-5 md:pl-10 md:pr-10  lg:flex-row lg:flex-wrap justify-center lg:mt-16">
           <Projects src={"/projects/chat2click.png"} alt={"projeto de automação na criação de links para o whatsapp"} h2={"Chat2Click"} description={"Aplicação criada com o foco no auxilio de desenvolvimento de links para whatsapp."} link={"https://click2-chat.vercel.app/"}/>
           <Projects src={"/projects/chat2click.png"} alt={"projeto de automação na criação de links para o whatsapp"} h2={"Chat2Click"} description={"Aplicação criada com o foco no auxilio de desenvolvimento de links para whatsapp."} link={"https://click2-chat.vercel.app/"}/>
           <Projects src={"/projects/chat2click.png"} alt={"projeto de automação na criação de links para o whatsapp"} h2={"Chat2Click"} description={"Aplicação criada com o foco no auxilio de desenvolvimento de links para whatsapp."} link={"https://click2-chat.vercel.app/"}/>
