@@ -1,4 +1,5 @@
 import NavBar from "@/components/NavBar";
+import Projects from "@/components/projects";
 import Image from "next/image";
 
 export default function Home() {
@@ -30,6 +31,19 @@ export default function Home() {
           />
         </div>
       </main>
+
+      <section id="projects" className="container flex items:center text-center flex-col mt-16 lg:mt-32">
+        <div>
+          <h1 className="text-white text-4xl font-bold">Projects</h1>
+        </div>
+        <div className="flex flex-col items-center mt-12 p-10 lg:flex-row lg:flex-wrap justify-center">
+          <Projects src={"/projects/chat2click.png"} alt={"projeto de automação na criação de links para o whatsapp"} h2={"Chat2Click"} description={"Aplicação criada com o foco no auxilio de desenvolvimento de links para whatsapp."} link={"https://click2-chat.vercel.app/"}/>
+          <Projects src={"/projects/chat2click.png"} alt={"projeto de automação na criação de links para o whatsapp"} h2={"Chat2Click"} description={"Aplicação criada com o foco no auxilio de desenvolvimento de links para whatsapp."} link={"https://click2-chat.vercel.app/"}/>
+          <Projects src={"/projects/chat2click.png"} alt={"projeto de automação na criação de links para o whatsapp"} h2={"Chat2Click"} description={"Aplicação criada com o foco no auxilio de desenvolvimento de links para whatsapp."} link={"https://click2-chat.vercel.app/"}/>
+          <Projects src={"/projects/chat2click.png"} alt={"projeto de automação na criação de links para o whatsapp"} h2={"Chat2Click"} description={"Aplicação criada com o foco no auxilio de desenvolvimento de links para whatsapp."} link={"https://click2-chat.vercel.app/"}/>
+        </div>
+
+      </section>
     </>
   );
 }

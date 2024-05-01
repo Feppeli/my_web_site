@@ -22,13 +22,13 @@ const NavBar = () => {
             </ul>
             <ul className='hidden lg:flex flex-row justify-between gap-8 text-xl'>
                 <li>
-                    <a href=".">About</a>
+                    <a className='hover:text-sky-600 transition delay-100' href="#about">About</a>
                 </li>
                 <li>
-                    <a href=".">Projects</a>
+                    <a className='hover:text-sky-600 transition delay-100' href="#projects">Projects</a>
                 </li>
                 <li>
-                    <a href=".">Contact</a>
+                    <a className='hover:text-sky-600 transition delay-100' href="#contacts">Contact</a>
                 </li>
             </ul>
             <button className='lg:hidden' onClick={handleClick}>
