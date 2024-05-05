@@ -1,8 +1,20 @@
 import NavBar from "@/components/NavBar";
 import Projects from "@/components/projects";
 import Image from "next/image";
+import { SubmitHandler, useForm } from "react-hook-form";
+
+type inputs = {
+  name: string,
+  email:string,
+  mesage: string
+}
 
 export default function Home() {
+
+  const { register, handleSubmit } = useForm<inputs>();
+  const onSubmit: SubmitHandler<inputs> = data => console.log(data);
+
+
   return (
     <>
       <NavBar/>
@@ -31,6 +43,7 @@ export default function Home() {
           />
         </div>
       </main>
+
 
       {/* ABOUT */}
       <section id="#about" className="container flex items:center text-center flex-col mt-16">
@@ -70,6 +83,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+
       {/* PROJECTS */}
       <section id="projects" className="container flex items:center text-center flex-col mt-16 lg:mt-32">
         <div>
@@ -81,8 +96,25 @@ export default function Home() {
           <Projects src={"/projects/chat2click.png"} alt={"projeto de automação na criação de links para o whatsapp"} h2={"Chat2Click"} description={"Aplicação criada com o foco no auxilio de desenvolvimento de links para whatsapp."} link={"https://click2-chat.vercel.app/"}/>
           <Projects src={"/projects/chat2click.png"} alt={"projeto de automação na criação de links para o whatsapp"} h2={"Chat2Click"} description={"Aplicação criada com o foco no auxilio de desenvolvimento de links para whatsapp."} link={"https://click2-chat.vercel.app/"}/>
         </div>
+        <div>
+          <div>
+            <h1>Tem algum projeto em mente?</h1>
+          </div>
+          <div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <input {...register("name", {required: true, maxLength: 30})} />
+              <input type="email"{...register("email", {required:true, maxLength:30})} />
+              <input type="text" {...register("mesage", {required:true, maxLength:255})}/>
+              <input type="submit" />
+            </form>
+          </div>
+        </div>
+
 
       </section>
+      <footer className="bg-blue-600 flex flex-col items-center justify-center text-center mt-16">
+        <span className="text-white font-bold text-xl p-6">© <a href="">Felipe Teixeira</a> 2024</span>
+      </footer>
     </>
   );
 }
