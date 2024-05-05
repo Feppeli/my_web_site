@@ -1,7 +1,7 @@
+import FormContact from "@/components/FormContact";
 import NavBar from "@/components/NavBar";
 import Projects from "@/components/projects";
 import Image from "next/image";
-import { SubmitHandler, useForm } from "react-hook-form";
 
 type inputs = {
   name: string,
@@ -11,14 +11,10 @@ type inputs = {
 
 export default function Home() {
 
-  const { register, handleSubmit } = useForm<inputs>();
-  const onSubmit: SubmitHandler<inputs> = data => console.log(data);
-
-
   return (
     <>
       <NavBar/>
-      <main className="container flex flex-col-reverse lg:flex-row items-center justify-between  lg:mt-16 text-center lg:text-left">
+      <main className="container flex flex-col-reverse lg:flex-row items-center justify-between  lg:mt-16 text-center lg:text-left  ">
         <div className=" m-4 lg:m-0">
           <h1 className="text-4xl lg:text-6xl text-white font-bold">Hello i'm Felipe Teixeira</h1>
           <span className="text-white text-xl lg:text-3xl mt-8">
@@ -96,17 +92,14 @@ export default function Home() {
           <Projects src={"/projects/chat2click.png"} alt={"projeto de automação na criação de links para o whatsapp"} h2={"Chat2Click"} description={"Aplicação criada com o foco no auxilio de desenvolvimento de links para whatsapp."} link={"https://click2-chat.vercel.app/"}/>
           <Projects src={"/projects/chat2click.png"} alt={"projeto de automação na criação de links para o whatsapp"} h2={"Chat2Click"} description={"Aplicação criada com o foco no auxilio de desenvolvimento de links para whatsapp."} link={"https://click2-chat.vercel.app/"}/>
         </div>
-        <div>
+
+        {/* FORM */}
+        <div className="container pt-24 p-4">
           <div>
-            <h1>Tem algum projeto em mente?</h1>
+            <h1 className="text-3xl lg:text-4xl font-bold text-white">Tem algum projeto em mente?</h1>
           </div>
           <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <input {...register("name", {required: true, maxLength: 30})} />
-              <input type="email"{...register("email", {required:true, maxLength:30})} />
-              <input type="text" {...register("mesage", {required:true, maxLength:255})}/>
-              <input type="submit" />
-            </form>
+            <FormContact/>
           </div>
         </div>
 
